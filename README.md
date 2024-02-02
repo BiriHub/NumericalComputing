@@ -1,1 +1,2 @@
-# NumericalComputing
+## Numerical Computing assignments
+The repository contains all assignments made during the [Numerical Computing](https://search.usi.ch/en/courses/35268193/numerical-computing) course at the Università della Svizzera italiana USI in the autumn semester 2023
