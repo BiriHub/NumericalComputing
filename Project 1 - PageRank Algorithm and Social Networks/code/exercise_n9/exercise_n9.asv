@@ -1,0 +1,25 @@
+%exercise n°9
+load('housegraph.mat', 'A')
+load('housegraph.mat', 'name')
+
+ranking= pagerank1(A,0.85);
+
+% Sort authors by PageRank in descending order
+[sorted_pageRank_val,sorted_indices] = sort(ranking, 'descend');
+
+sorted_names = name(sorted_indices, :);
+
+%print 
+for i=1:numel(sorted_pageRank_val)
+    fprintf("i= %d , %d == %s\n",i,sorted_pageRank_val(i),sorted_names(i,:));
+end
+
+figure;
+bar(flip(sorted_pageRank_val)); % Flip the data to invert the x-axis
+set(gca, 'XTick', 1:numel(sorted_names), 'XTickLabel', sorted_names);
+set(gca, 'YTick', 1:numel(sorted_names), 'YTickLabel', cellstr(sorted_names));
+title('Authors by PageRank (Descending Order)');
+ylabel('PageRank');
+title('Authors by PageRank (Descending Order)');
+
+
